@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icsa_mobile_app/src/features/screens/notifications_screen.dart';
 import 'src/features/home/presentation/pages/DashboardScreen.dart';
 
 void main() {
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 93, 0, 255)),
         useMaterial3: true,
       ),
-      home: const DashboardScreen(),
+     // home: const DashboardScreen(),
+      home: const NotificationsScreen(),
     );
   }
 }

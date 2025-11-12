@@ -13,15 +13,32 @@ class NotificationsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: bgColor,
-        selectedItemColor: orangeAccent,
-        unselectedItemColor: Colors.white70,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications_active_outlined), label: ''),
-        ],
-      ),
+  type: BottomNavigationBarType.fixed, // Keeps all icons visible and preserves colors
+  backgroundColor: const Color(0xFF1E2430), // your bgColor
+  selectedItemColor: const Color(0xFFFF8C00), // orangeAccent
+  unselectedItemColor: Colors.white70,
+  showSelectedLabels: false,
+  showUnselectedLabels: false,
+  items: const [
+    BottomNavigationBarItem(
+      icon: Icon(Icons.home_outlined),
+      label: '',
+    ),    
+    BottomNavigationBarItem(
+      icon: Icon(Icons.settings_outlined),
+      label: '',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.notifications_active_outlined),
+      label: '',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.person_outline), // 👤 Added user icon
+      label: '',
+    ),
+  ],
+),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
