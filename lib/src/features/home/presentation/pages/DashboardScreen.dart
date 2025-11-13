@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icsa_mobile_app/src/features/screens/notifications_screen.dart'; // Import NotificationsScreen
-
+import 'package:icsa_mobile_app/src/features/screens/settings_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -38,7 +38,15 @@ class DashboardScreen extends StatelessWidget {
         showUnselectedLabels: false,
         currentIndex: 0, // Dashboard is selected
         onTap: (index) {
-          if (index == 2) {
+          if (index == 1) {
+            // Settings tab clicked → navigate to SettingsScreen
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const SettingsScreen(),
+              ),
+            );
+          } else if (index == 2) {
             // Notifications tab clicked
             Navigator.push(
               context,
@@ -47,7 +55,7 @@ class DashboardScreen extends StatelessWidget {
               ),
             );
           }
-          // Add other navigation if needed (home=0, settings=1, user=3)
+          // Add other navigation if needed (home=0, user=3)
         },
         items: const [
           BottomNavigationBarItem(
@@ -160,8 +168,7 @@ class DashboardScreen extends StatelessWidget {
                   runSpacing: 12,
                   children: [
                     SizedBox(
-                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) /
-                          2,
+                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) / 2,
                       child: DashboardMiniCard(
                         icon: Icons.check_circle,
                         title: 'Clearance',
@@ -172,8 +179,7 @@ class DashboardScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) /
-                          2,
+                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) / 2,
                       child: DashboardMiniCard(
                         icon: Icons.school,
                         title: 'Enrollment',
@@ -184,8 +190,7 @@ class DashboardScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) /
-                          2,
+                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) / 2,
                       child: DashboardMiniCard(
                         icon: Icons.attach_money,
                         title: 'Payments & Fines',
@@ -196,8 +201,7 @@ class DashboardScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) /
-                          2,
+                      width: (MediaQuery.of(context).size.width - 16 * 2 - 12) / 2,
                       child: DashboardMiniCard(
                         icon: Icons.event,
                         title: 'Events',
@@ -252,7 +256,7 @@ class DashboardScreen extends StatelessWidget {
   }
 }
 
-// Mini Card Widget
+// --- Mini Card Widget ---
 class DashboardMiniCard extends StatelessWidget {
   final IconData icon;
   final String title;
@@ -312,7 +316,7 @@ class DashboardMiniCard extends StatelessWidget {
   }
 }
 
-// Announcements Card Widget
+// --- Announcements Card Widget ---
 class AnnouncementsCard extends StatelessWidget {
   final String imagePath;
 
