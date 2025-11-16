@@ -1,21 +1,20 @@
 {
   "project_info": {
-    "project_number": "600698365943",
-    "project_id": "icsa-microservices",
-    "storage_bucket": "icsa-microservices.firebasestorage.app"
+    "project_number": "963687368711",
+    "project_id": "ic-lsg-app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:600698365943:android:939fd7bbc7deac611e30f2",
+        "mobilesdk_app_id": "1:963687368711:android:8b31ec40683f51deb582a2",
         "android_client_info": {
-          "package_name": "com.example.icsa_mobile_app"
+          "package_name": "com.codex.icsa_mobile_app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDPbWpX5Zz_SB5YJkrDAYycuzvlGYDLopA"
+          "current_key": "AIzaSyCGxTGz5dREAI-mXGyc2bsEGS4UKOU0Fto"
         }
       ],
       "services": {

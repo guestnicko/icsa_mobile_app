@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:icsa_mobile_app/src/common/widgets/navigation_bar.dart';
+import 'package:icsa_mobile_app/src/core/theme/app_spacing.dart';
+import 'package:icsa_mobile_app/src/core/theme/theme_provider.dart';
+import 'package:icsa_mobile_app/src/features/home/presentation/widgets/header_section.dart';
+import 'package:icsa_mobile_app/src/features/home/presentation/widgets/search_bar.dart';
+import 'package:icsa_mobile_app/src/features/home/presentation/widgets/upcoming_event_card.dart';
+import 'package:provider/provider.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = context.watch<ThemeProvider>();
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Scaffold(
+      backgroundColor: colorScheme.surface,
+      bottomNavigationBar: const CustomNavBar(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg, vertical: AppSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const AuthHeaderSection(),
+              const SizedBox(height: AppSpacing.lg),
+              const AuthSearchBar(),
+              const SizedBox(height: AppSpacing.lg),
+              const AuthHeaderSection(),
+              const SizedBox(height: AppSpacing.lg),
+              const AuthUpcomingEventCard(),
+              const SizedBox(height: AppSpacing.lg),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
